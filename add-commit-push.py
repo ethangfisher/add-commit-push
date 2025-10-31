@@ -1,6 +1,8 @@
 import subprocess
 import sys
 
+Message = "Update files."
+
 print ("Starting add-commit-push")
 print ("git status")
 subprocess.run(["git", "status"])
@@ -13,13 +15,13 @@ if confirm.lower() == "y":
 else:
     print("Exiting...")
     sys.exit()
-    
+
 
 print ("git add -A")
 subprocess.run(["git", "add", "-A"])
 
 print ("git commit -m")
-subprocess.run(["git", "commit", "-m", "\"update files.\""])
+subprocess.run(["git", "commit", "-m", Message])
 
 print ("git push")
 subprocess.run(["git", "push"])
